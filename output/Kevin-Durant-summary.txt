@@ -12,10 +12,10 @@
  Mean   :28.02                                                              Mean   :13.12  
  3rd Qu.:43.00                                                              3rd Qu.:24.00  
  Max.   :59.00                                                              Max.   :58.00  
-   opponent               x                 y         
- Length:915         Min.   :-246.00   Min.   :-39.00  
- Class :character   1st Qu.: -29.00   1st Qu.: 11.00  
- Mode  :character   Median :   0.00   Median : 80.00  
-                    Mean   :  11.43   Mean   : 98.54  
-                    3rd Qu.:  73.50   3rd Qu.:173.50  
-                    Max.   : 240.00   Max.   :572.00  
+   opponent               x                 y              name               minute     
+ Length:915         Min.   :-246.00   Min.   :-39.00   Length:915         Min.   : 1.00  
+ Class :character   1st Qu.: -29.00   1st Qu.: 11.00   Class :character   1st Qu.:11.00  
+ Mode  :character   Median :   0.00   Median : 80.00   Mode  :character   Median :23.00  
+                    Mean   :  11.43   Mean   : 98.54                      Mean   :22.25  
+                    3rd Qu.:  73.50   3rd Qu.:173.50                      3rd Qu.:32.00  
+                    Max.   : 240.00   Max.   :572.00                      Max.   :48.00  
