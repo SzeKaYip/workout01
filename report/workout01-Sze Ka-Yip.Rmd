@@ -34,4 +34,50 @@ table_pt2_effective_shooting_by_player
         
         
 ```
+```{r}
+
+pt3t <- as.data.frame(table(dat$name, dat$shot_type=="3PT Field Goal"))
+names(pt3t)[1] <-"name"
+names(pt3t)[3] <-"total"
+pt3t <- pt3t[pt3t[2] == TRUE, c(1,3)]
+a<- ((dat$shot_made_flag=="shot_yes")  & (dat$shot_type=="3PT Field Goal") )
+pt3m <- as.data.frame(table(dat$name, a))
+pt3m <- pt3m[pt3m[2] == TRUE, 3]
+table_pt3 <- data.frame(
+  pt3t,
+  made=pt3m)
+table_pt3$perc_made <- table_pt3$made/table_pt3$total
+table_pt3 <- arrange(table_pt3, desc(perc_made))
+table_pt3_effective_shooting_by_player <- table_pt3
+table_pt3_effective_shooting_by_player
+
+
+```
+```{r}
+
+tab<- (dat$shot_type=="3PT Field Goal") |  (dat$shot_type=="2PT Field Goal")
+tab <-as.data.frame(table(dat$name, tab))
+names(tab)[1] <-"name"
+names(tab)[3] <-"total"
+tab <-tab[ , c(1,3)]
+
+
+
+made <- (dat$shot_made_flag=="shot_yes") & ((dat$shot_type=="3PT Field Goal") |  (dat$shot_type=="2PT Field Goal"))
+made <-data.frame(table(dat$name, total,made))
+made<-made[made[3]==TRUE, 4]
+
+
+table23<-data.frame(
+      tab,
+      made)
+
+table23$perc_made <- table23$made/ table23$total
+table23 <- arrange(table23, desc(perc_made))
+table23
+
+
+
+
+```
 
