@@ -108,3 +108,23 @@ pdf(file = "../images/klay-thompson-shot-chart.pdf", width = 6.5, height = 5)
 klay_shot_chart
 dev.off()
 
+
+
+
+
+
+court_file <- "../images/nba-court.jpg"
+court_image <- rasterGrob( readJPEG(court_file), width = unit(1, "npc"), height = unit(1, "npc"))
+stephen_curry_shot_chart <- ggplot(data = curry, aes(x = x, y = y, color=shot_made_flag)) + 
+  annotation_custom(court_image, -300, 300, -55, 430) + 
+  geom_point() + 
+  ylim(-55, 430) +
+  ggtitle('Shot Chart: Stephen Curry (2016 season)') + 
+  theme_light()+
+  scale_color_manual(values = c("shot_no" = "#6c568f", "shot_yes" = "#ffcf40"))
+
+stephen_curry_shot_chart
+
+pdf(file = "../images/stephen-curry-shot-chart.pdf", width = 6.5, height = 5)
+stephen_curry_shot_chart
+dev.off()
