@@ -1,7 +1,7 @@
 title: shots-data
 description:data_prepation_that_contain_the_variables.
 input(s):the_raw_5_fata_csv_file_for_each_player
-output(s):to_create_a_global_table
+output(s):to_create_a_global_table_shot_charts
 
 getwd()
 curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
@@ -86,8 +86,25 @@ sink()
 
 
 
+library(ggplot2)
+library(jpeg)
+library(grid)
 
 
 
+court_file <- "../images/nba-court.jpg"
+court_image <- rasterGrob( readJPEG(court_file), width = unit(1, "npc"), height = unit(1, "npc"))
+klay_shot_chart <- ggplot(data = thompson, aes(x = x, y = y, color=shot_made_flag)) + 
+  annotation_custom(court_image, -300, 300, -55, 430) + 
+  geom_point() + 
+  ylim(-55, 430) +
+  ggtitle('Shot Chart: Klay Thompson (2016 season)') + 
+  theme_light()+
+  scale_color_manual(values = c("shot_no" = "#6c568f", "shot_yes" = "#ffcf40"))
 
+klay_shot_chart 
+
+pdf(file = "../images/klay-thompson-shot-chart.pdf", width = 6.5, height = 5)
+klay_shot_chart
+dev.off()
 
