@@ -11,10 +11,21 @@ thompson<- read.csv("../data/klay-thompson.csv",stringsAsFactors = FALSE)
 kevin <- read.csv("../data/kevin-durant.csv",stringsAsFactors = FALSE)
 
 curry$name <- c("Stephen Curry")
+curry$name <- as.factor(curry$name)
+
 andre$name <- c("Andre Iguodala")
+andre$name <- as.factor(andre$name)
+
 green$name <- c("Graymond Green")
+green$name <- as.factor(green$name)
+
 thompson$name <- c("Klay Thompson")
+thompson$name <- as.factor(thompson$name)
+
 kevin$name <- c("Kevin Durant")
+kevin$name <- as.factor(kevin$name)
+
+
 
 curry$shot_made_flag[curry$shot_made_flag == "n"] <- "shot_no"
 andre$shot_made_flag[andre$shot_made_flag == "n"] <- "shot_no"
@@ -61,5 +72,22 @@ summary(kevin)
 sink()
 
 table1 <- data.frame(rbind(andre,green,kevin,thompson, curry))
-table1
+
+write.csv(
+  x= table1,
+  file='../data/shots-data.csv')
+
+
+summary(table1)
+sink("../output/shots-data-summary.txt")
+summary(table1)
+sink()
+
+
+
+
+
+
+
+
 
