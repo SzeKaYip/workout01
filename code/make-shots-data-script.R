@@ -61,5 +61,5 @@ summary(kevin)
 sink()
 
 
-rbind(curry, andre,green,kevin,thompson)
+ rbind(andre,green,kevin,thompson, curry)
 
