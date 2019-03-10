@@ -2,6 +2,7 @@ title: shots-data
 description:data_prepation_that_contain_the_variables.
 input(s):the_raw_5_fata_csv_file_for_each_player
 output(s):to_create_a_global_table
+
 getwd()
 curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
 andre <- read.csv("../data/andre-iguodala.csv",stringsAsFactors = FALSE)
@@ -32,7 +33,7 @@ curry$minute <- (12*curry$period - curry$minutes_remaining)
 andre$minute <- (12*andre$period - andre$minutes_remaining)
 green$minute <- (12*green$period - green$minutes_remaining)
 thompson$minute <- (12*thompson$period - thompson$minutes_remaining)
-
+kevin $minute <- (12*kevin$period - kevin$minutes_remaining)
 
 summary(curry)
 sink("../output/Stephen-Curry-summary.txt")
@@ -60,4 +61,5 @@ summary(kevin)
 sink()
 
 
+rbind(curry, andre,green,kevin,thompson)
 
