@@ -1,7 +1,7 @@
 title: shots-data
 description:data_prepation_that_contain_the_variables.
 input(s):the_raw_5_fata_csv_file_for_each_player
-output(s):to_create_a_global_table_shot_charts
+output(s):to_create_a_global_table
 
 curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
 andre <- read.csv("../data/andre-iguodala.csv",stringsAsFactors = FALSE)
