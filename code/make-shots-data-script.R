@@ -151,10 +151,41 @@ dev.off()
 
 
 
+court_file <- "../images/nba-court.jpg"
+court_image <- rasterGrob( readJPEG(court_file), width = unit(1, "npc"), height = unit(1, "npc"))
+draymond_green_shot_chart <- ggplot(data = green, aes(x = x, y = y, color=shot_made_flag)) + 
+  annotation_custom(court_image, -300, 300, -55, 430) + 
+  geom_point() + 
+  ylim(-55, 430) +
+  ggtitle('Shot Chart:  Draymond Green (2016 season)') + 
+  theme_light()+
+  scale_color_manual(values = c("shot_no" = "#6c568f", "shot_yes" = "#ffcf40"))
+
+draymond_green_shot_chart
+
+pdf(file = "../images/draymond-green-shot-chart.pdf", width = 6.5, height = 5)
+draymond_green_shot_chart
+dev.off()
 
 
 
 
+court_file <- "../images/nba-court.jpg"
+court_image <- rasterGrob( readJPEG(court_file), width = unit(1, "npc"), height = unit(1, "npc"))
+
+andre_iguodala_shot_chart <- ggplot(data = andre, aes(x = x, y = y, color=shot_made_flag)) + 
+  annotation_custom(court_image, -300, 300, -55, 430) + 
+  geom_point() + 
+  ylim(-55, 430) +
+  ggtitle('Shot Chart:  Andre Iguodala (2016 season)') + 
+  theme_light()+
+  scale_color_manual(values = c("shot_no" = "#6c568f", "shot_yes" = "#ffcf40"))
+
+andre_iguodala_shot_chart
+
+pdf(file = "../images/andre-iguodala--shot-chart.pdf", width = 6.5, height = 5)
+andre_iguodala_shot_chart
+dev.off()
 
 
 
