@@ -12,10 +12,10 @@
  Mean   :28.53                                                              Mean   :17.99  
  3rd Qu.:44.00                                                              3rd Qu.:26.00  
  Max.   :59.00                                                              Max.   :71.00  
-   opponent               x                  y             name               minute     
- Length:1250        Min.   :-246.000   Min.   :-36.0   Length:1250        Min.   : 1.00  
- Class :character   1st Qu.: -96.500   1st Qu.: 18.0   Class :character   1st Qu.:10.25  
- Mode  :character   Median :   0.500   Median :144.0   Mode  :character   Median :24.00  
-                    Mean   :  -3.642   Mean   :135.4                      Mean   :23.44  
-                    3rd Qu.:  91.000   3rd Qu.:228.0                      3rd Qu.:34.00  
-                    Max.   : 240.000   Max.   :717.0                      Max.   :48.00  
+   opponent               x                  y                    name          minute     
+ Length:1250        Min.   :-246.000   Min.   :-36.0   Stephen Curry:1250   Min.   : 1.00  
+ Class :character   1st Qu.: -96.500   1st Qu.: 18.0                        1st Qu.:10.25  
+ Mode  :character   Median :   0.500   Median :144.0                        Median :24.00  
+                    Mean   :  -3.642   Mean   :135.4                        Mean   :23.44  
+                    3rd Qu.:  91.000   3rd Qu.:228.0                        3rd Qu.:34.00  
+                    Max.   : 240.000   Max.   :717.0                        Max.   :48.00  
