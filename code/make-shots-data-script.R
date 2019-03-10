@@ -60,6 +60,6 @@ sink("../output/Kevin-Durant-summary.txt")
 summary(kevin)
 sink()
 
-
- rbind(andre,green,kevin,thompson, curry)
+table1 <- data.frame(rbind(andre,green,kevin,thompson, curry))
+table1
 
