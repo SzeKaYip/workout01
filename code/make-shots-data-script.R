@@ -3,11 +3,11 @@ description:data_prepation_that_contain_the_variables.
 input(s):the_raw_5_fata_csv_file_for_each_player
 output(s):to_create_a_global_table
 getwd()
-curry <- read.csv("~/Desktop/workout01/data/stephen-curry.csv", stringsAsFactors = FALSE)
-andre <- read.csv("~/Desktop/workout01/data/andre-iguodala.csv",stringsAsFactors = FALSE)
-green <- read.csv("~/Desktop/workout01/data/draymond-green.csv",stringsAsFactors = FALSE)
-thompson<- read.csv("~/Desktop/workout01/data/klay-thompson.csv",stringsAsFactors = FALSE)
-kevin <- read.csv("~/Desktop/workout01/data/kevin-durant.csv",stringsAsFactors = FALSE)
+curry <- read.csv("../data/stephen-curry.csv", stringsAsFactors = FALSE)
+andre <- read.csv("../data/andre-iguodala.csv",stringsAsFactors = FALSE)
+green <- read.csv("../data/draymond-green.csv",stringsAsFactors = FALSE)
+thompson<- read.csv("../data/klay-thompson.csv",stringsAsFactors = FALSE)
+kevin <- read.csv("../data/kevin-durant.csv",stringsAsFactors = FALSE)
 
 curry$name <- c("Stephen Curry")
 andre$name <- c("Andre Iguodala")
@@ -34,6 +34,30 @@ green$minute <- (12*green$period - green$minutes_remaining)
 thompson$minute <- (12*thompson$period - thompson$minutes_remaining)
 
 
+summary(curry)
+sink("../output/Stephen-Curry-summary.txt")
+summary(curry)
+sink()
+
+summary(andre)
+sink("../output/Andre-Iguodala-summary.txt")
+summary(andre)
+sink()
+
+summary(green)
+sink("../output/Graymond-Green-summary.txt")
+summary(green)
+sink()
+
+summary(thompson)
+sink("../output/Klay-Thompson-summary.txt")
+summary(thompson)
+sink()
+
+summary(kevin)
+sink("../output/Kevin-Durant-summary.txt")
+summary(kevin)
+sink()
 
 
 
